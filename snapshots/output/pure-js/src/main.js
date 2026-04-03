@@ -110,56 +110,52 @@ function SomeClass() {}
 
 SomeClass.prototype = {
 //^^^^^^^ reference pure-js 1.0.0 src/`main.js`/SomeClass().
-//^^^^^^^ reference local 24
 //        ^^^^^^^^^ reference local 23
   someMethod() {},
-//^^^^^^^^^^ definition local 26
+//^^^^^^^^^^ definition local 25
 }
 
 SomeClass.prototype.someMethod2 = () => {}
 //^^^^^^^ reference pure-js 1.0.0 src/`main.js`/SomeClass().
-//^^^^^^^ reference local 24
 //        ^^^^^^^^^ reference local 23
-//                  ^^^^^^^^^^^ reference local 29
+//                  ^^^^^^^^^^^ reference local 28
 
 new SomeClass().someMethod()
 //  ^^^^^^^^^ reference pure-js 1.0.0 src/`main.js`/SomeClass().
-//  ^^^^^^^^^ reference local 24
-//              ^^^^^^^^^^ reference local 26
+//              ^^^^^^^^^^ reference local 25
 new SomeClass().someMethod2()
 //  ^^^^^^^^^ reference pure-js 1.0.0 src/`main.js`/SomeClass().
-//  ^^^^^^^^^ reference local 24
-//              ^^^^^^^^^^^ reference local 29
+//              ^^^^^^^^^^^ reference local 28
 
 import {
   SomeExportedClass,
-//^^^^^^^^^^^^^^^^^ reference local 32
+//^^^^^^^^^^^^^^^^^ reference local 31
   SomeAnonymousClass,
-//^^^^^^^^^^^^^^^^^^ reference local 35
+//^^^^^^^^^^^^^^^^^^ reference local 34
   someFunc,
-//^^^^^^^^ reference local 38
+//^^^^^^^^ reference local 37
   someAnonymousFunc,
-//^^^^^^^^^^^^^^^^^ reference local 41
+//^^^^^^^^^^^^^^^^^ reference local 40
   someArrowFunc,
-//^^^^^^^^^^^^^ reference local 44
+//^^^^^^^^^^^^^ reference local 43
   someValue,
-//^^^^^^^^^ reference local 47
+//^^^^^^^^^ reference local 46
 } from './exports'
 //     ^^^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/
 
 new SomeExportedClass().method()
-//  ^^^^^^^^^^^^^^^^^ reference local 32
-//                      ^^^^^^ reference local 48
+//  ^^^^^^^^^^^^^^^^^ reference local 31
+//                      ^^^^^^ reference local 47
 new SomeAnonymousClass().method()
-//  ^^^^^^^^^^^^^^^^^^ reference local 35
-//                       ^^^^^^ reference local 49
+//  ^^^^^^^^^^^^^^^^^^ reference local 34
+//                       ^^^^^^ reference local 48
 someFunc()
-//^^^^^^ reference local 38
+//^^^^^^ reference local 37
 someAnonymousFunc()
-//^^^^^^^^^^^^^^^ reference local 41
+//^^^^^^^^^^^^^^^ reference local 40
 someArrowFunc()
-//^^^^^^^^^^^ reference local 44
+//^^^^^^^^^^^ reference local 43
 const i = someValue
 //    ^ definition pure-js 1.0.0 src/`main.js`/i.
-//        ^^^^^^^^^ reference local 47
+//        ^^^^^^^^^ reference local 46
 
