@@ -2,33 +2,33 @@
 
 exports.SomeExportedClass = class LocalClassName {
 //^^^^^ reference local 2
-//      ^^^^^^^^^^^^^^^^^ reference local 2
+//      ^^^^^^^^^^^^^^^^^ definition local 3
 //                                ^^^^^^^^^^^^^^ reference local 2
   method() {}
-//^^^^^^ definition local 3
+//^^^^^^ definition local 4
 }
 
 module.exports.SomeAnonymousClass = class /*anonymous*/ {
-//^^^^ reference local 8
+//^^^^ reference local 9
 //     ^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/
-//             ^^^^^^^^^^^^^^^^^^ reference local 9
+//             ^^^^^^^^^^^^^^^^^^ definition local 7
   method() {}
-//^^^^^^ definition local 10
+//^^^^^^ definition local 11
 }
 
 exports.someFunc = function localFuncName() {}
-//^^^^^ reference local 13
-//      ^^^^^^^^ reference local 13
-//                          ^^^^^^^^^^^^^ reference local 14
+//^^^^^ reference local 14
+//      ^^^^^^^^ definition local 14
+//                          ^^^^^^^^^^^^^ reference local 15
 exports.someAnonymousFunc = function () /*anonymous*/ {}
-//^^^^^ reference local 17
-//      ^^^^^^^^^^^^^^^^^ reference local 17
+//^^^^^ reference local 18
+//      ^^^^^^^^^^^^^^^^^ definition local 18
 
 exports.someArrowFunc = () => {}
-//^^^^^ reference local 20
-//      ^^^^^^^^^^^^^ reference local 20
+//^^^^^ reference local 21
+//      ^^^^^^^^^^^^^ definition local 21
 
 exports.someValue = 4
-//^^^^^ reference local 23
-//      ^^^^^^^^^ reference local 23
+//^^^^^ reference local 24
+//      ^^^^^^^^^ definition local 24
 
