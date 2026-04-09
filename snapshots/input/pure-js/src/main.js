@@ -62,3 +62,19 @@ SomeClass.prototype.someMethod2 = () => {}
 
 new SomeClass().someMethod()
 new SomeClass().someMethod2()
+
+import {
+  SomeExportedClass,
+  SomeAnonymousClass,
+  someFunc,
+  someAnonymousFunc,
+  someArrowFunc,
+  someValue,
+} from './exports'
+
+new SomeExportedClass().method()
+new SomeAnonymousClass().method()
+someFunc()
+someAnonymousFunc()
+someArrowFunc()
+const i = someValue

@@ -131,3 +131,35 @@ new SomeClass().someMethod2()
 //  ^^^^^^^^^ reference local 24
 //              ^^^^^^^^^^^ reference local 29
 
+import {
+  SomeExportedClass,
+//^^^^^^^^^^^^^^^^^ reference local 32
+  SomeAnonymousClass,
+//^^^^^^^^^^^^^^^^^^ reference local 35
+  someFunc,
+//^^^^^^^^ reference local 38
+  someAnonymousFunc,
+//^^^^^^^^^^^^^^^^^ reference local 41
+  someArrowFunc,
+//^^^^^^^^^^^^^ reference local 44
+  someValue,
+//^^^^^^^^^ reference local 47
+} from './exports'
+//     ^^^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/
+
+new SomeExportedClass().method()
+//  ^^^^^^^^^^^^^^^^^ reference local 32
+//                      ^^^^^^ reference local 48
+new SomeAnonymousClass().method()
+//  ^^^^^^^^^^^^^^^^^^ reference local 35
+//                       ^^^^^^ reference local 49
+someFunc()
+//^^^^^^ reference local 38
+someAnonymousFunc()
+//^^^^^^^^^^^^^^^ reference local 41
+someArrowFunc()
+//^^^^^^^^^^^ reference local 44
+const i = someValue
+//    ^ definition pure-js 1.0.0 src/`main.js`/i.
+//        ^^^^^^^^^ reference local 47
+
