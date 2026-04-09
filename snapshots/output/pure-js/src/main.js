@@ -129,33 +129,33 @@ new SomeClass().someMethod2()
 
 import {
   SomeExportedClass,
-//^^^^^^^^^^^^^^^^^ reference local 8
+//^^^^^^^^^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.SomeExportedClass#
   SomeAnonymousClass,
-//^^^^^^^^^^^^^^^^^^ reference local 10
+//^^^^^^^^^^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.SomeAnonymousClass#
   someFunc,
-//^^^^^^^^ reference local 13
+//^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.someFunc.
   someAnonymousFunc,
-//^^^^^^^^^^^^^^^^^ reference local 16
+//^^^^^^^^^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.someAnonymousFunc.
   someArrowFunc,
-//^^^^^^^^^^^^^ reference local 19
+//^^^^^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.someArrowFunc.
   someValue,
-//^^^^^^^^^ reference local 22
+//^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.someValue.
 } from './exports'
 //     ^^^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/
 
 new SomeExportedClass().method()
-//  ^^^^^^^^^^^^^^^^^ reference local 8
-//                      ^^^^^^ reference local 24
+//  ^^^^^^^^^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.SomeExportedClass#
+//                      ^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.SomeExportedClass#method().
 new SomeAnonymousClass().method()
-//  ^^^^^^^^^^^^^^^^^^ reference local 10
-//                       ^^^^^^ reference local 28
+//  ^^^^^^^^^^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.SomeAnonymousClass#
+//                       ^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.SomeAnonymousClass#method().
 someFunc()
-//^^^^^^ reference local 29
+//^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.someFunc.
 someAnonymousFunc()
-//^^^^^^^^^^^^^^^ reference local 30
+//^^^^^^^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.someAnonymousFunc.
 someArrowFunc()
-//^^^^^^^^^^^ reference local 31
+//^^^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.someArrowFunc.
 const i = someValue
 //    ^ definition pure-js 1.0.0 src/`main.js`/i.
-//        ^^^^^^^^^ reference local 32
+//        ^^^^^^^^^ reference pure-js 1.0.0 src/`exports.js`/exports.someValue.
 
